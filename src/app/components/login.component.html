@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<h1 class="h1css">{{service.title}}</h1>
+<form class="login-form" #loginForm="ngForm">
+  <h3>Log in</h3>
+  <mat-form-field class="login-full-width">
+    <input matInput placeholder="Email" maxlength="255" name="email" [(ngModel)]="userEmail" #email="ngModel" [pattern]="emailPattern"
+      required>
+    <mat-error *ngIf="email.errors && email.errors.required">
+      Email required.      
+    </mat-error>
+     <mat-error *ngIf="email.errors && email.errors.pattern">
+      Email not valid.
+    </mat-error> 
+    
+
+  </mat-form-field><br/>
+  <mat-form-field class="login-full-width">
+    <input type="password" maxlength="150"  matInput placeholder="Password" name="password" [(ngModel)]="userPassword" #password="ngModel" required>
+    <mat-error *ngIf="password.errors && password.errors.required">
+        Password required.
+    </mat-error>    
+  </mat-form-field>
+  <br/>
+  <button class="loginbtn" *ngIf="loginForm.form.valid" mat-button (click)="Loginclick()">Log In</button>
+  <button class="loginbtn" *ngIf="!loginForm.form.valid" mat-button style="background-color: #d3d3d9 !important;" [disabled]="!loginForm.form.valid">Log In</button><br/>
+  
+  <a class="forgotlabelcss" routerLink="/passwordRecovery" routerLinkActive="active">Forgot your password</a>
+  <br/><br/><a class="forgotlabelcss" routerLink="/reset" routerLinkActive="active">Reset Password</a>
+</form>
