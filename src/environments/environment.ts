@@ -5,7 +5,7 @@
 
 export const environment = {
   production: true,
-  apiBaseUrl: 'http://192.168.0.171:8080',
+  apiBaseUrl: 'https://192.168.0.171:8080',
   //apiBaseUrl: 'http://localhost:5000/api',
   allowTestLogin: true,
   applicationInsightsInstrumentationKey: 'ac61706c-5fca-4ec2-b763-0a94902537dd'
